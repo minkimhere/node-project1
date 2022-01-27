@@ -13,7 +13,8 @@ const app = express();
 
 
 // 접근한 몽고디비에 연결한다.
-mongoose.connect('mongodb://localhost:27017/blog',{
+mongoose.connect('mongodb://15.165.204.201', 27017, username="test", password="test",{
+// mongoose.connect('mongodb://localhost:27017/blog',{
     // useNewUrlParser: true, useUnifiedTopology: true
 })
 
