@@ -15,7 +15,7 @@ const app = express();
 // 접근한 몽고디비에 연결한다.
 // mongoose.connect('mongodb://15.165.204.201', 27017, username="test", password="test",{
 mongoose.connect('mongodb://localhost:27017/blog',{
-    // useNewUrlParser: true, useUnifiedTopology: true
+    useNewUrlParser: true, useUnifiedTopology: true
 })
 
 // view engine이 ejs코드를 html로 바꿔준다.
