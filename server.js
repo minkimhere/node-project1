@@ -28,7 +28,12 @@ app.set('view engine', 'ejs')
 // express.unlencoded를 써줘서 route의 articles.js의 post에서 
 // New Articl페이지에 form에 모든 파라미터들이 접근가능하게 해줬다.
 // urlencoded가 위에 있어야 / 붙은 것들이 모두 접근이 가능하다.
+app.use((req, res, next) => {
+    console.log('Request URL:', req.originalUrl, ' - ', new Date());
+    next();
+});
 app.use(express.urlencoded({extended : false}))
+
 
 // main route
 app.get('/', async (req, res) => {
