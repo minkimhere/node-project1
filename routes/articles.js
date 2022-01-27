@@ -25,13 +25,15 @@ router.get('/new', (req, res) => {
 
 // id값 가져옴, {article : article}해서 pass(접근 가능하게 함)
 // findById 는 async function이므로 async 써준다
- // const article = await Article.findById(req.params.id)
+// const article = await Article.findById(req.params.id)
 router.get('/:id', async (req, res) => {
 
-    const id = req.params.id;
-    const article = await Article.findOne({id})
-   
-    res.render('articles/show', {article: article})
+    //하루종일 했는데도 안됐는데 갑자기 됨
+    const id = ObjectId(req.params.id);
+    const article = await Article.findById(id)
+
+    // const article = await Article.findOne({id})   
+    res.render('articles/show', { article: article })
 
     // const { params: { _id }, } = req; 
     // const article = await Article.find({ _id: _id }); 
