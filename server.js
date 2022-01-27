@@ -2,7 +2,9 @@
 const express = require('express')
 
 // 서버연결해주는 거 접근할 수 있게 되었다.
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
+const connect = require('./models')
+connect()
 
 // 몽구스 스키마 저장되어있는 article 모듈가져오기
 const Article = require('./models/article')
@@ -14,9 +16,9 @@ const app = express();
 
 // 접근한 몽고디비에 연결한다.
 // mongoose.connect('mongodb://15.165.204.201', 27017, username="test", password="test",{
-mongoose.connect('mongodb://localhost:27017/blog',{
-    useNewUrlParser: true, useUnifiedTopology: true
-})
+// mongoose.connect('mongodb://localhost:27017/blog',{
+//     useNewUrlParser: true, useUnifiedTopology: true
+// })
 
 // view engine이 ejs코드를 html로 바꿔준다.
 app.set('view engine', 'ejs')

@@ -86,7 +86,8 @@ router.post('/', async (req, res) => {
         // 성공할경우 article로 리턴해서 article 값에 새롭게 저장해줌. 저장하면 아이디가 생김
         // http 맨 뒤에 id 값 붙어서 새로고침해줌. (:id 붙은 get으로 리다이렉팅함.)
         article = await article.save()
-        res.redirect(`/articles/:${article.id}`)
+        res.redirect("/")
+        // res.redirect(`/articles/:${article.id}`)
     } catch (e) {
         //실패할경우
         //전에 썼었던 화면으로 돌아간다.
