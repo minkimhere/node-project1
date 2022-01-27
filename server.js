@@ -1,4 +1,4 @@
-// express 라이브러리로 서버 만들기
+// express 라이브러리로 서버 만들기.
 const express = require('express')
 
 // 서버연결해주는 거 접근할 수 있게 되었다.
